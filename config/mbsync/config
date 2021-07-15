@@ -1,0 +1,52 @@
+
+IMAPStore noora@coldness.co-remote
+Host mail.coldness.co
+Port 993
+User noora@coldness.co
+PassCmd "pass noora@coldness.co"
+AuthMechs LOGIN
+SSLType IMAPS
+CertificateFile /etc/ssl/certs/ca-certificates.crt
+
+MaildirStore noora@coldness.co-local
+Subfolders Verbatim
+Path /home/tieto/.local/share/mail/noora@coldness.co/
+Inbox /home/tieto/.local/share/mail/noora@coldness.co/INBOX
+
+Channel noora@coldness.co
+Expunge Both
+Master :noora@coldness.co-remote:
+Slave :noora@coldness.co-local:
+Patterns * !"[Gmail]/All Mail"
+Create Both
+SyncState *
+MaxMessages 0
+ExpireUnread no
+# End profile
+
+
+IMAPStore navi@coldness.co-remote
+Host mail.coldness.co
+Port 993
+User navi@coldness.co
+PassCmd "pass navi@coldness.co"
+AuthMechs LOGIN
+SSLType IMAPS
+CertificateFile /etc/ssl/certs/ca-certificates.crt
+
+MaildirStore navi@coldness.co-local
+Subfolders Verbatim
+Path /home/tieto/.local/share/mail/navi@coldness.co/
+Inbox /home/tieto/.local/share/mail/navi@coldness.co/INBOX
+
+Channel navi@coldness.co
+Expunge Both
+Master :navi@coldness.co-remote:
+Slave :navi@coldness.co-local:
+Patterns * !"[Gmail]/All Mail"
+Create Both
+SyncState *
+MaxMessages 0
+ExpireUnread no
+# End profile
+
