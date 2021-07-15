@@ -1,0 +1,11 @@
+#!/bin/sh
+
+case $BLOCK_BUTTON in
+	1) "$TERMINAL" -e ranger ~/Downloads;;
+	2) "$TERMINAL" -e ~/Downloads/mv.sh ;;
+	3) notify-send "♻️  Downloads transfer module" "\- Left click to open Downloads directory
+- Middle click to sync to Pictures" ;;
+	6) "$TERMINAL" -e "$EDITOR" "$0" ;;
+esac
+
+printf "↕️"
